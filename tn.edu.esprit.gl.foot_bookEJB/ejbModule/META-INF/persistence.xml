@@ -9,7 +9,7 @@
 		<class>tn.edu.esprit.gl.foot_bookEJB.model.Stadium</class>
 		<class>tn.edu.esprit.gl.foot_bookEJB.model.User</class>
 		<properties>
-			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.hbm2ddl.auto" value="create" />
 		</properties>
 	</persistence-unit>
 </persistence>

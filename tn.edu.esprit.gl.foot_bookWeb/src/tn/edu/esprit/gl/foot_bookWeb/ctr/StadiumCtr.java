@@ -22,8 +22,9 @@ public class StadiumCtr {
 	private List<Stadium> stadiums = new ArrayList<Stadium>();
 	private Stadium stadiumSelected = new Stadium();
 	private DataModel<Stadium> datamodel = new ListDataModel<Stadium>();
+	private User userConnected = new User();
 
-	@ManagedProperty(value = "#{userCtr}")
+	@ManagedProperty(value = "#{userManager}")
 	private UserCtr userCtr;
 
 	@EJB
@@ -33,7 +34,7 @@ public class StadiumCtr {
 
 	public String showSelectedStadium() {
 		stadiumSelected = datamodel.getRowData();
-		User userConnected = userCtr.getUser();
+		userConnected = userCtr.getUser();
 		System.out.println(stadiumSelected.getLibele());
 		System.out.println(userConnected.getName());
 		bookingServicesLocal.bookStadium(userConnected, stadiumSelected,
